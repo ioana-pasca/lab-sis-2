@@ -7,11 +7,9 @@
 #    Goal: Prints the file with the biggest size or smallest
 # -------------------------------------------------------------------
 
-# Constants
+# Variables
 arg1="$1"
 arg2="$2"
-
-# Variables
 dir=$(pwd)
 
 usage() {  # Error of usage
