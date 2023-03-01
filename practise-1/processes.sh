@@ -4,7 +4,7 @@
 #    File: processes.sh
 #    Author: Ioana Carmen Pasca
 #    Date: 28/02/2023
-#    Goal: 
+#    Goal: Checks the number of processes of a certain user
 # -------------------------------------------------------------------
 
 # Constants
