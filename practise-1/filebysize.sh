@@ -13,7 +13,7 @@ arg2="$2"
 dir=$(pwd)
 
 usage() {  # Error of usage
-	echo "usage: ./filebysize [OPTION]..." 1>&2
+	echo "usage: ./filebysize.sh [OPTION]..." 1>&2
 	exit 1
 }
 

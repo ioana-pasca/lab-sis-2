@@ -15,7 +15,7 @@ user="$1"
 arg2="$2"
 
 usage() {  # Error of usage
-	echo "usage: ./filebysize [OPTION]... UserName" 1>&2
+	echo "usage: ./processes.sh [OPTION]... UserName" 1>&2
 	exit 1
 }
 
