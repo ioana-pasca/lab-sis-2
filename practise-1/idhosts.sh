@@ -51,7 +51,7 @@ elif [ "$arg1" = "-l" ] && [ "$arg3" = "-n" ]; then
     lab=$(cat $FILE | grep "$arg2" | sed -E 's/.*L\.([0-9])\.([0-9]{3}).*/\1\2/')    
     for name in $(cat $FILE | grep "$lab" | awk '{ printf($3"\n") }'); do
         name_pc=$(echo $name | sed -E 's/.*-pc([0-9]{2})$/pc\1/')
-        pcs_names=$(printf "%s %s" "$pcs_names" "$name_pc")
+        pcs_names=$(printf "%s %s" "$pcs_names" "$name_pc") # Concatenate strings
     done
 
     echo "$arg2:$pcs_names" 
