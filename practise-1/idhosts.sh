@@ -15,6 +15,7 @@ arg1="$1"
 arg2="$2"
 arg3="$3"
 arg4="$4"
+pcs_names=""
 
 usage() {  # Error of usage
 	echo "usage: ./idhosts.sh [OPTION]..." 1>&2
@@ -48,12 +49,12 @@ elif [ "$arg1" = "-l" ] && [ "$arg3" = "-n" ]; then
     checkLab
 
     lab=$(cat $FILE | grep "$arg2" | sed -E 's/.*L\.([0-9])\.([0-9]{3}).*/\1\2/')    
-    for name in $(cat $FILE | grep "$lab" | awk '{ printf($3) }'); do
+    for name in $(cat $FILE | grep "$lab" | awk '{ printf($3"\n") }'); do
         name_pc=$(echo $name | sed -E 's/.*-pc([0-9]{2})$/pc\1/')
-        pcs_names=$name_pc " "
+        pcs_names=$(printf "%s %s" "$pcs_names" "$name_pc")
     done
 
-    echo pcs_names
+    echo "$arg2:$pcs_names" 
 
 elif [ "$arg1" = "-l" ]; then
     checkLab
