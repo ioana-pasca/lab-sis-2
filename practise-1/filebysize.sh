@@ -17,20 +17,21 @@ usage() {  # Error of usage
 	exit 1
 }
 
-# No options, biggest size file
-find $dir -type f | sort -n | head -n 1
-
 # Options
-if [ "$arg1" == "-s" ]; then
+if [ "$arg1" = "" ]; then
+	# No options, biggest size file
+	find $dir -type f | sort -n | head -n 1
+elif [ "$arg1" = "-s" ]; then
 	# Smallest size file
     find $dir -type f | sort -nr | head -n 1
 
-elif [ "$arg1" == "-r" ]; then
+elif [ "$arg1" = "-r" ]; then
 	# Biggest size file, recursive search
 	find $dir -maxdepth 1 -type f | sort -n | head -n 1
 
-elif [ "$arg1" == "-r" ] && [ "$arg2" == "-s" ]; then
+elif [ "$arg1" = "-r" ] && [ "$arg2" = "-s" ]; then
 	# Smallest size file, recursive search
 	find $dir -maxdepth 1 -type f | sort -nr | head -n 1
-
+else
+	usage
 fi
