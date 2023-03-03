@@ -15,7 +15,7 @@ user="$1"
 arg2="$2"
 
 usage() {  # Error of usage
-	echo "usage: ./processes.sh [OPTION]... UserName" 1>&2
+	echo "usage: ./processes.sh UserName [OPTION]..." 1>&2
 	exit 1
 }
 
@@ -29,7 +29,7 @@ if [ $# -lt $MIN_PARAMS ]; then
 	usage
 fi
 
-# Chels if the user exists
+# Checks if the user exists
 if ! id $user >/dev/null 2>&1 ; then
 	error "user $user does not exists in the system"
 fi
