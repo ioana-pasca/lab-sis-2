@@ -8,7 +8,7 @@
 # -------------------------------------------------------------------
 
 # Constants
-FILE="/home/ioana/lab-sis-2/practise-1/cases/hosts"
+FILE="/etc/hosts"
 
 # Variables
 arg1="$1"
