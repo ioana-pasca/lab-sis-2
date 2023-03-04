@@ -52,7 +52,7 @@ elif [ "$arg1" = "-l" ] && [ "$arg3" = "-n" ]; then
     awk -v lab="$lab" -v l="$arg2" \
     'BEGIN {print "\nLab: ", l, "\n"; printf "%-9s %-15s %-22s\n", "Id PC", "IP", "Subdomain"; print "--------- -------------- ---------------------------"} \
     $0 ~ lab {sub(/.*-pc/, "pc", $3); sub(/.*pc[0-9]+\.*/, "", $2); printf "%-9s %-15s %-25s\n", $3, $1, $2; count++} \
-    END {print "Total hosts:", count}' $FILE
+    END {print "\nTotal hosts:", count}' $FILE
 
 elif [ "$arg1" = "-l" ] && [ "$arg2" != "" ]; then
     # Searchs for a concrete lab and its hosts
