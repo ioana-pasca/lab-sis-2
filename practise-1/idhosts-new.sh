@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------
 #    File: idhosts-new.sh
 #    Author: Ioana Carmen Pasca
-#    Date: 3/03/2023
+#    Date: 03/03/2023
 #    Goal: Prints the total number of PCs in /etc/hosts
 # -------------------------------------------------------------------
 
