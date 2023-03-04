@@ -27,9 +27,8 @@ error() {  # Message of error
 	exit 1
 }
 
-checkLab() {
+checkLab() {  # Checks if the lab exists
     if ! grep -q "$arg2$" "$FILE"; then
-        # Checks if the lab exists
         error "the lab $arg2 does not exists"
     fi
 }
@@ -41,7 +40,7 @@ fi
 
 if [ "$arg1" = "" ]; then
     # Prints total number of PCs
-    num_hosts=$(cat $FILE | grep urjc | wc -l)
+    num_hosts=$(cat $FILE | grep "urjc" | wc -l)
     echo "Total number of hosts: $num_hosts"
 
 elif [ "$arg1" = "-l" ] && [ "$arg3" = "-n" ]; then
@@ -65,6 +64,7 @@ elif [ "$arg1" = "-l" ]; then
     echo "$arg2 has $num_hosts hosts"
 
 else
+    # Invalid argument
     usage
     
 fi
