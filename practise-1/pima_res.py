@@ -14,7 +14,7 @@ import pandas as pd
 # Arguments
 parser = argparse.ArgumentParser(description='process some integers.')
 parser.add_argument('archivo', metavar='Prima.csv', type=str, help='file with the info')
-parser.add_argument('-m', '--mean', action='store_true', help='prints the name of the columns with numeric values and calculates their mean')
+parser.add_argument('-m', '--mean', action='store_true', help='prints the name of the columns with numeric values and calculates their average')
 parser.add_argument('-b', '--bool', action='store_true', help='prints the name of the columns with boolean values (yes or no)')
 args = parser.parse_args()
 df = pd.read_csv(args.archivo)
