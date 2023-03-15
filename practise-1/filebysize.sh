@@ -36,5 +36,6 @@ elif [ "$arg1" = "-r" ]; then
 
 else
 	usage
-	
 fi
+
+exit 0

@@ -76,3 +76,5 @@ else
     usage
     
 fi
+
+exit 0

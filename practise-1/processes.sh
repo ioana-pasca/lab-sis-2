@@ -55,3 +55,5 @@ case $arg2 in
 		error "option $arg2 is not valid" 
 		;;
 esac
+
+exit 0
